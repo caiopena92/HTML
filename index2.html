@@ -1,0 +1,109 @@
+<html lang="en">
+  <body>
+    <button id="liga-5s">Ligar por 5s</button>
+    <script>
+      function comando(ligar) {
+        return fetch('/api/zeroconf/switch', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },  
+          body: JSON.stringify({
+            deviceid: '10010b05f5',
+            data: { switch: ligar ? 'on' : 'off' },
+          }),
+        }).then(function (res) {
+          return res.json()
+        })
+      }
+      var botao = document.querySelector('#liga-5s')
+      botao.addEventListener('click', function () {
+        comando(1).then(function (data) {
+          setTimeout(function () {
+            comando(0)
+          }, 5000)
+        })
+      })
+    </script>
+    <button id="liga-10s">Ligar por 10s</button>
+    <script>
+      function comando(ligar) {
+        return fetch('/api/zeroconf/switch', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },  
+          body: JSON.stringify({
+            deviceid: '10010b05f5',
+            data: { switch: ligar ? 'on' : 'off' },
+          }),
+        }).then(function (res) {
+          return res.json()
+        })
+      }
+      var botao = document.querySelector('#liga-10s')
+      botao.addEventListener('click', function () {
+        comando(1).then(function (data) {
+          setTimeout(function () {
+            comando(0)
+          }, 10000)
+        })
+      })
+    </script>
+    <button id="liga-15s">Ligar por 15s</button>
+    <script>
+      function comando(ligar) {
+        return fetch('/api/zeroconf/switch', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },  
+          body: JSON.stringify({
+            deviceid: '10010b05f5',
+            data: { switch: ligar ? 'on' : 'off' },
+          }),
+        }).then(function (res) {
+          return res.json()
+        })
+      }
+      var botao = document.querySelector('#liga-15s')
+      botao.addEventListener('click', function () {
+        comando(1).then(function (data) {
+          setTimeout(function () {
+            comando(0)
+          }, 15000)
+        })
+      })
+    </script>
+    <button id="voltar">Puxar o alvo</button>
+    <script>
+      function comando(ligar) {
+        return fetch('/api2/zeroconf/switch', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },  
+          body: JSON.stringify({
+            deviceid: '10010b05f5',
+            data: { switch: ligar ? 'on' : 'off' },
+          }),
+        }).then(function (res) {
+          return res.json()
+        })
+      }
+      var botao = document.querySelector('#voltar')
+      botao.addEventListener('click', function () {
+        comando(1).then(function (data) {
+          setTimeout(function () {
+            comando(0)
+          }, 15000)
+        })
+      })
+    </script>
+  </body>
+</html>
+
